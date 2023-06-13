@@ -99,9 +99,6 @@ const AppLayout = () => {
                             </NavItem>
                         ),
                 )}
-                <NavItem key="status" id="status">
-                    <a href="https://status.packit.dev">Status</a>
-                </NavItem>
                 <NavItem key="blog-posts" id="blog-posts">
                     <a href="https://packit.dev/posts">Blog posts</a>
                 </NavItem>
