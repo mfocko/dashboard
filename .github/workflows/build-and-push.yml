@@ -12,22 +12,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dockerfile: [Dockerfile]
-        image: [dashboard]
         # Include only configurations for the branch that triggered the workflow.
         # [TODO] Switch internal to `stable` once stabilized, duh…
         include:
           - branch: main
             deployment: stg
             tags: "stg latest"
+            dockerfile: Dockerfile
+            image: dashboard
 
           - branch: main
             deployment: internal
             tags: "internal"
+            dockerfile: Dockerfile
+            image: dashboard
 
           - branch: stable
             deployment: prod
             tags: "prod"
+            dockerfile: Dockerfile
+            image: dashboard
 
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
